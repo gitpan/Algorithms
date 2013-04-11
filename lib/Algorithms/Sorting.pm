@@ -3,7 +3,7 @@ package Algorithms::Sorting;
 use warnings;
 use strict;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 
 BEGIN {
@@ -281,11 +281,11 @@ END {}
 
 
 __END__
-=pod
+
 
 =head1 NAME
 
-Algorithms::Searching - Provide various sorting methods.
+Algorithms::Sorting - Provide various sorting methods.
 
 =head1 SYNOPSIS
 
@@ -300,6 +300,7 @@ Algorithms::Searching - Provide various sorting methods.
   
 
 =head1 DESCRIPTION
+
 In this module, there are many very general sorting algorithms written for Perl. Those are
 
 	Bubble Sort
@@ -317,12 +318,12 @@ Here, all subroutines have same syntax to use.
 
 	BubbleSort(\@array);
 	print "@array\n";
-	
+
 =item ShakerSort
 
 	ShakerSort(\@array);
 	print "@array\n";
-	
+
 =item SelectionSort
 
 	SelectionSort(\@array);
@@ -342,6 +343,8 @@ Here, all subroutines have same syntax to use.
 
 	QuickSort(\@array);
 	print "@array\n";	
+
+=back
 
 =head1 SEE ALSO
 

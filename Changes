@@ -3,4 +3,5 @@ Revision history for Perl extension Algorithms.
 0.01  Thu Apr 11 19:19:59 2013
 	- original version; created by h2xs 1.23 with options
 		-X -n Algorithms
-
+0.02  Thu Apr 11 23:58:06 IST 2013
+	-Removed the POD errors

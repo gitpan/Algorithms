@@ -4,7 +4,7 @@ use strict;
 use warnings;
 
 our $AUTOLOAD;
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 BEGIN {
 	use Exporter;
@@ -68,6 +68,7 @@ Algorithms - Provide bunch of famous algorithms for Sorting and Searching.
   #it will return 1 if found, else -1
   my $return=BinarySearch(\@list, $key); 
 
+
 =head1 DESCRIPTION
 
 In this module, there are many very general sorting algorithms written for Perl. Those are
@@ -78,6 +79,7 @@ In this module, there are many very general sorting algorithms written for Perl.
         Insertion Sort
         Shell Sort
         Quick Sort
+
 And, there are two very general searching algorithms(Sequential Search & Binary Search) written for Perl.
 
 

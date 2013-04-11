@@ -3,7 +3,7 @@ package Algorithms::Searching;
 use strict;
 use warnings;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 
 
@@ -83,7 +83,6 @@ END {}
 
 
 __END__
-=pod
 
 =head1 NAME
 
@@ -104,23 +103,28 @@ Algorithms::Searching - Provide Sequential Search & Binary Search methods.
   
 
 =head1 DESCRIPTION
+
 In this module, there are two very general searching algorithms(Sequential Search & Binary Search) written for Perl.
 
 =over 4
 
 =item SequentialSearch
 
-The subroutinne performs sequential search on the list which may contain number or/and characters. In return gives index of the item searching for if found else -1.
+The subroutine performs sequential search on the list which may contain number or/and characters. In return gives index of the item searching for if found, else -1.
 
 	my $index=SequentialSearch(\@array, $key);
-	
+
 =item BinarySearch
 
-The subroutine performs the Binary search method on the list which may contain number or/and characters. In return it gives 1 if found else -1.
+The subroutine performs the Binary search method on the list which may contain number or/and characters. In return it gives 1 if found, else -1.
 
-	my $return=BinrarySearch(\@array, $key);
-	
+	my $return=BinarySearch(\@array, $key);
+
 Here, function returns 1 on success instead of index, because binary search can be performed on sorted array only. Therefore, before operation starts, BinarySearch() function sorts the array using Quick Sort algorithm.
+
+
+=back
+
 
 =head1 SEE ALSO
 
