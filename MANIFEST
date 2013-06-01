@@ -4,5 +4,5 @@ MANIFEST
 README
 t/Algorithms.t
 lib/Algorithms.pm
-lib/Algorithms/Sorting.pm
 lib/Algorithms/Searching.pm
+lib/Algorithms/Sorting.pm

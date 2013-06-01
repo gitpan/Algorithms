@@ -3,26 +3,18 @@ package Algorithms::Searching;
 use strict;
 use warnings;
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 
 
 BEGIN { 
 	use Exporter();
 	use Algorithms::Sorting;
-	our @ISA=qw(Exporter Algorithms::Sorting);
+	our @ISA=qw(Exporter);
 	our @EXPORT=qw(&SequentialSearch &BinarySearch);
 }
 
 
-sub _filter {
-        my $array=shift;
-
-        my @charstrings=grep(/[a-zA-Z]/, @$array);
-        my @numbers=grep(/^-?\d*\.?\d*$/, @$array);
-
-        return \@charstrings, $#charstrings+1, \@numbers, $#numbers+1;
-}
 
 sub SequentialSearch {
 	my ($list, $key)=@_;
@@ -37,40 +29,20 @@ sub SequentialSearch {
 
 sub BinarySearch {
 	my ($list, $key)=@_;
-	my @nlist=@$list;
-	
-	QuickSort(\@nlist);
-	my ($c, $cc, $n, $nc)=_filter(\@nlist);
+
 	my ($low, $high, $mid);
-	if($key=~/[a-zA-Z]/) {	
-		$low=0;
-		$high=$cc-1;
-		while($low<=$high) {
-			$mid=int(($low+$high)/2);
-			if($key lt $c->[$mid]) {
-				$high=$mid-1;
-				next;
-			} 
-			if($key gt $c->[$mid]) {
-				$low=$mid+1;
-				next;
-			}
-			return 1;
+	$low=0;
+	$high=$#$list;
+	while($low<=$high) {
+		$mid=int(($low+$high)/2);
+		if($key lt $list->[$mid]) {
+			$high=$mid-1;
+		} 
+		elsif($key gt $list->[$mid]) {
+			$low=$mid+1;
 		}
-	} else {
-		$low=0;
-		$high=$nc-1;
-		while($low<=$high) {
-			$mid=int(($low+$high)/2);
-			if($key lt $n->[$mid]) {
-				$high=$mid-1;
-				next;
-			} 
-			if($key gt $n->[$mid]) {
-				$low=$mid+1;
-				next;
-			}
-			return 1;
+		else {
+			return $mid;
 		}
 	}
 	return -1;
@@ -98,7 +70,9 @@ Algorithms::Searching - Provide Sequential Search & Binary Search methods.
   #it will return index of the key if found, else -1
   my $index=SequentialSearch(\@list, $key);
   
-  #it will return 1 if found, else -1
+  use Algorithms::Sorting;
+  QuickSort(\@list);  #for binary search array must be sorted
+  #it will return index of key if found, else -1
   my $return=BinarySearch(\@list, $key);  
   
 
@@ -116,11 +90,10 @@ The subroutine performs sequential search on the list which may contain number o
 
 =item BinarySearch
 
-The subroutine performs the Binary search method on the list which may contain number or/and characters. In return it gives 1 if found, else -1.
+The subroutine performs the Binary search method on the list which may contain number or/and characters. In return it gives index of key if found, else -1.
 
 	my $return=BinarySearch(\@array, $key);
 
-Here, function returns 1 on success instead of index, because binary search can be performed on sorted array only. Therefore, before operation starts, BinarySearch() function sorts the array using Quick Sort algorithm.
 
 
 =back
@@ -132,7 +105,7 @@ Algorithms::Sorting and Algorithms
 
 =head1 AUTHOR
 
-Vipin Singh, E<lt>vipinsingh211@gmail.comE<gt>
+Vipin Singh, E<lt>qwer@cpan.orgE<gt>
 
 =head1 COPYRIGHT AND LICENSE
 

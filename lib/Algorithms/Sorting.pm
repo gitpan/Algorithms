@@ -3,7 +3,7 @@ package Algorithms::Sorting;
 use warnings;
 use strict;
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 
 BEGIN {
@@ -352,7 +352,7 @@ Algorithms and Algorithms::Searching
 
 =head1 AUTHOR
 
-Vipin Singh, E<lt>vipinsingh211@gmail.comE<gt>
+Vipin Singh, E<lt>qwer@cpan.orgE<gt>
 
 =head1 COPYRIGHT AND LICENSE
 

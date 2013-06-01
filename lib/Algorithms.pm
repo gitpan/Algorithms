@@ -4,7 +4,7 @@ use strict;
 use warnings;
 
 our $AUTOLOAD;
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 BEGIN {
 	use Exporter;
@@ -65,7 +65,7 @@ Algorithms - Provide bunch of famous algorithms for Sorting and Searching.
   #it will return index of the key if found, else -1
   my $index=SequentialSearch(\@list, $key);
   
-  #it will return 1 if found, else -1
+  #it will return index of the if found, else -1. @list must be sorted.
   my $return=BinarySearch(\@list, $key); 
 
 
@@ -89,7 +89,7 @@ Algorithms::Sorting and Algorithms::Searching
 
 =head1 AUTHOR
 
-Vipin Singh, E<lt>vipinsingh211@gmail.comE<gt>
+Vipin Singh, E<lt>qwer@cpan.orgE<gt>
 
 =head1 COPYRIGHT AND LICENSE
 
